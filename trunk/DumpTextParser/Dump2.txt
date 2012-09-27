@@ -1,0 +1,467 @@
+.sympath+ srv*\\lucidfs\public\RE_PlayGround\symstore*http://msdl.microsoft.com/download/symbols
+
+WARNING: The debugger does not have a current process or thread
+WARNING: Many commands will not work
+Symbol search path is: srv*\\lucidfs\public\RE_PlayGround\symstore*http://msdl.microsoft.com/download/symbols
+Expanded Symbol search path is: srv*\\lucidfs\public\re_playground\symstore*http://msdl.microsoft.com/download/symbols
+.sympath+ c:\1
+
+WARNING: The debugger does not have a current process or thread
+WARNING: Many commands will not work
+Symbol search path is: srv*\\lucidfs\public\RE_PlayGround\symstore*http://msdl.microsoft.com/download/symbols;c:\1
+Expanded Symbol search path is: srv*\\lucidfs\public\re_playground\symstore*http://msdl.microsoft.com/download/symbols;c:\1
+.lines -e
+
+WARNING: The debugger does not have a current process or thread
+WARNING: Many commands will not work
+Line number information will be loaded
+{m}/--\{m} Opening Dump File
+
+Microsoft (R) Windows Debugger Version 6.1.7600.16385 X86
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [\\lucid151w32\c$\_crash_2_.dmp]
+User Mini Dump File with Full Memory: Only application data is available
+
+Symbol search path is: srv*\\lucidfs\public\RE_PlayGround\symstore*http://msdl.microsoft.com/download/symbols;c:\1
+Executable search path is: 
+Windows 7 Version 7600 MP (4 procs) Free x86 compatible
+Product: WinNt, suite: SingleUserTS
+Machine Name:
+Debug session time: Thu Dec  2 13:46:09.000 2010 (UTC + 2:00)
+System Uptime: 0 days 0:03:40.909
+Process Uptime: 0 days 0:00:17.000
+................................................................
+.........................................................
+Loading unloaded module list
+...........
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(2f0.31c): Access violation - code c0000005 (first/second chance not available)
+{m}/--\{m} Done
+{m}/--\{m} Analyzing
+!analyze -v
+
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+*** ERROR: Symbol file could not be found.  Defaulted to export symbols for benchmark.dll - 
+*** ERROR: Module load completed but symbols could not be loaded for 3DMarkVantage.exe
+GetPageUrlData failed, server returned HTTP status 404
+URL requested: http://watson.microsoft.com/StageOne/3DMarkVantage_exe/1_0_1_1/47e24758/sandbox_logic10_dll/1_7_0_14958/4cf76649/c0000005/00093d87.htm?Retriage=1
+
+FAULTING_IP: 
+sandbox_logic10!ResourceDescBehavior::GetBehavior+17 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\common\src\resourcedescbehavior.cpp @ 235]
+0e433d87 8b4320          mov     eax,dword ptr [ebx+20h]
+
+EXCEPTION_RECORD:  ffffffff -- (.exr 0xffffffffffffffff)
+ExceptionAddress: 0e433d87 (sandbox_logic10!ResourceDescBehavior::GetBehavior+0x00000017)
+   ExceptionCode: c0000005 (Access violation)
+  ExceptionFlags: 00000000
+NumberParameters: 2
+   Parameter[0]: 00000000
+   Parameter[1]: 00000021
+Attempt to read from address 00000021
+
+PROCESS_NAME:  3DMarkVantage.exe
+
+ERROR_CODE: (NTSTATUS) 0xc0000005 - The instruction at 0x%08lx referenced memory at 0x%08lx. The memory could not be %s.
+
+EXCEPTION_CODE: (NTSTATUS) 0xc0000005 - The instruction at 0x%08lx referenced memory at 0x%08lx. The memory could not be %s.
+
+EXCEPTION_PARAMETER1:  00000000
+
+EXCEPTION_PARAMETER2:  00000021
+
+READ_ADDRESS:  00000021 
+
+FOLLOWUP_IP: 
+sandbox_logic10!ResourceDescBehavior::GetBehavior+17 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\common\src\resourcedescbehavior.cpp @ 235]
+0e433d87 8b4320          mov     eax,dword ptr [ebx+20h]
+
+MOD_LIST: <ANALYSIS/>
+
+NTGLOBALFLAG:  0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+FAULTING_THREAD:  0000031c
+
+BUGCHECK_STR:  APPLICATION_FAULT_NULL_CLASS_PTR_DEREFERENCE_INVALID_POINTER_READ
+
+PRIMARY_PROBLEM_CLASS:  NULL_CLASS_PTR_DEREFERENCE
+
+DEFAULT_BUCKET_ID:  NULL_CLASS_PTR_DEREFERENCE
+
+LAST_CONTROL_TRANSFER:  from 0e433ed8 to 0e433d87
+
+STACK_TEXT:  
+0eb1fde8 0e433ed8 0e506ae8 00000001 0e506ae8 sandbox_logic10!ResourceDescBehavior::GetBehavior+0x17 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\common\src\resourcedescbehavior.cpp @ 235]
+0eb1fe14 0e3ca4df 00000020 0e4ede00 0e4edda8 sandbox_logic10!ResourceDescBehavior::ExhibitsBehavior+0x28 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\common\src\resourcedescbehavior.cpp @ 319]
+0eb1fe4c 0e3ca533 0033afa0 00000000 0e439ed2 sandbox_logic10!Services_DDI10::IsOkayToCopy+0x6f [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\ddi10\src\services_ddi10.cpp @ 515]
+0eb1fe58 0e439ed2 0f1d8dc0 00000001 0eb1febc sandbox_logic10!Services_DDI10::IsOkayToCopy+0x23 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\ddi10\src\services_ddi10.cpp @ 520]
+0eb1fe8c 0e4394a7 0e50b178 102cfebc 00000000 sandbox_logic10!TimeDivisionFlip::InsertTransferCommand+0x102 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\common\src\timedivisionflip.cpp @ 136]
+0eb1fea0 0e3ca146 0eb1feb0 00000000 00000000 sandbox_logic10!TimeDivisionFlip_WithFrameDrop::handle_AfterPresent+0xc7 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\common\src\timedivisionflip_withframedrop.cpp @ 168]
+0eb1febc 0e43d0cc 102cfebc 00000002 10238ad8 sandbox_logic10!Services_DDI10::handle_AfterPresent+0x36 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\ddi10\src\services_ddi10.cpp @ 390]
+0eb1fed4 0e3f90d0 0d7a31c0 00000000 0e890020 sandbox_logic10!Execution::Feed+0x9c [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\common\src\execution.cpp @ 137]
+0eb1fef0 0e3f92f2 0e890020 0e52079c 0e5f7d30 sandbox_logic10!DivisionLogic_Task::ProcessMolecule+0xe0 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\logics\task\src\divisionlogic_task.cpp @ 229]
+0eb1ff1c 0e3a1358 0ccb11d0 76fff003 000004ec sandbox_logic10!DivisionLogic_Task::OnCommand+0x142 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\logics\task\src\divisionlogic_task.cpp @ 396]
+0eb1ff38 0e3a27cf 0a103510 0a103110 66a66b9a sandbox_logic10!LogicController::onCommand+0x48 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\sandbox_logic\src\logiccontroller.cpp @ 102]
+0eb1ff44 66a66b9a 0e5f7d30 0ccb11d0 0eb1ff74 sandbox_logic10!lucid::manau::Logic<LogicController>::onCommandNoThread+0xf [e:\home\build\trees\lucid2\branches\out\release\include\lucid\mana\logic.hpp @ 411]
+0eb1ff54 669f4135 0ccb11d0 00000000 0a0efde0 lucidd3d10u!lucid::manau::LogicMultiplex::defaultCommand+0x1a [e:\home\build\trees\lucid2\branches\product\mana\common\src\logicmultiplex.cpp @ 213]
+0eb1ff74 66a63b31 0ccb11d0 00000000 66a68bff lucidd3d10u!lucid::manau::Logic<lucid::manau::LogicMultiplex>::run+0x145 [e:\home\build\trees\lucid2\branches\product\mana\manatools\public\logic.hpp @ 493]
+0eb1ff80 66a68bff 0eb1ff94 77001174 0a0efde0 lucidd3d10u!lucid::manau::LogicThread::run+0x31 [e:\home\build\trees\lucid2\branches\product\mana\common\src\logicthread.cpp @ 159]
+0eb1ff88 77001174 0a0efde0 0eb1ffd4 7724b3f5 lucidd3d10u!lucid::manau::Thread::ThreadProc+0xf [e:\home\build\trees\lucid2\branches\product\mana\common\src\thread.cpp @ 130]
+0eb1ff94 7724b3f5 0a0efde0 799e9532 00000000 kernel32!BaseThreadInitThunk+0xe
+0eb1ffd4 7724b3c8 66a68bf0 0a0efde0 00000000 ntdll!__RtlUserThreadStart+0x70
+0eb1ffec 00000000 66a68bf0 0a0efde0 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+
+MODULE_NAME: Unknown_Module
+
+IMAGE_NAME:  Unknown_Image
+
+DEBUG_FLR_IMAGE_TIMESTAMP:  0
+
+STACK_COMMAND:  ~16s; .ecxr ; kb
+
+FAILURE_BUCKET_ID:  NULL_CLASS_PTR_DEREFERENCE_c0000005_Unknown_Image!Unknown
+
+BUCKET_ID:  APPLICATION_FAULT_NULL_CLASS_PTR_DEREFERENCE_INVALID_POINTER_READ
+
+WATSON_STAGEONE_URL:  http://watson.microsoft.com/StageOne/3DMarkVantage_exe/1_0_1_1/47e24758/sandbox_logic10_dll/1_7_0_14958/4cf76649/c0000005/00093d87.htm?Retriage=1
+ *** Followup info cannot be found !!! Please contact "Debugger Team"
+---------
+
+{m}/--\{m} Done
+{m}/--\{m} Dumping All Stacks
+~* k
+
+   0  Id: 2f0.c70 Suspend: 0 Teb: 7ffdf000 Unfrozen
+ChildEBP RetAddr  
+0012e2a8 77235e6c ntdll!KiFastSystemCallRet
+0012e2ac 754d179c ntdll!NtWaitForSingleObject+0xc
+0012e318 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+0012e330 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+0012e344 095a01fa kernel32!WaitForSingleObject+0x12
+WARNING: Stack unwind information not available. Following frames may be wrong.
+0012e46c 6f1d39cb benchmark+0x101fa
+0012e480 6f1d39ec msvcp80!std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign+0x6a [f:\dd\vctools\crt_bld\self_x86\crt\src\xstring @ 1075]
+0012e4c4 754d6c9a msvcp80!std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign+0x19 [f:\dd\vctools\crt_bld\self_x86\crt\src\xstring @ 1080]
+0012e500 00000000 KERNELBASE!GetProcAddress+0x44
+
+   1  Id: 2f0.9e4 Suspend: 0 Teb: 7ffde000 Unfrozen
+ChildEBP RetAddr  
+03eefef8 77234c1c ntdll!KiFastSystemCallRet
+03eefefc 754d1876 ntdll!ZwDelayExecution+0xc
+03eeff64 754d1818 KERNELBASE!SleepEx+0x65
+03eeff74 00442806 KERNELBASE!Sleep+0xf
+WARNING: Stack unwind information not available. Following frames may be wrong.
+03eeff94 7724b3f5 3DMarkVantage+0x42806
+03eeffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+03eeffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+   2  Id: 2f0.9f4 Suspend: 0 Teb: 7ffdd000 Unfrozen
+ChildEBP RetAddr  
+03fefef0 77234c1c ntdll!KiFastSystemCallRet
+03fefef4 754d1876 ntdll!ZwDelayExecution+0xc
+03feff5c 754d1818 KERNELBASE!SleepEx+0x65
+03feff6c 0040322c KERNELBASE!Sleep+0xf
+WARNING: Stack unwind information not available. Following frames may be wrong.
+03feff94 7724b3f5 3DMarkVantage+0x322c
+03feffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+03feffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+   3  Id: 2f0.a3c Suspend: 0 Teb: 7ffdc000 Unfrozen
+ChildEBP RetAddr  
+040efedc 77235e4c ntdll!KiFastSystemCallRet
+040efee0 737ea431 ntdll!NtWaitForMultipleObjects+0xc
+040eff88 77001174 winmm!timeThread+0x3c
+040eff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+040effd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+040effec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+   4  Id: 2f0.460 Suspend: 0 Teb: 7ffdb000 Unfrozen
+ChildEBP RetAddr  
+041efeb8 77235e6c ntdll!KiFastSystemCallRet
+041efebc 754d179c ntdll!NtWaitForSingleObject+0xc
+041eff28 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+041eff40 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+041eff54 01e7ebca kernel32!WaitForSingleObject+0x12
+WARNING: Frame IP not in any known module. Following frames may be wrong.
+041eff94 7724b3f5 0x1e7ebca
+041effd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+041effec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+   5  Id: 2f0.948 Suspend: 0 Teb: 7ffda000 Unfrozen
+ChildEBP RetAddr  
+042efeb8 77235e6c ntdll!KiFastSystemCallRet
+042efebc 754d179c ntdll!NtWaitForSingleObject+0xc
+042eff28 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+042eff40 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+042eff54 01e7ebca kernel32!WaitForSingleObject+0x12
+WARNING: Frame IP not in any known module. Following frames may be wrong.
+042eff94 7724b3f5 0x1e7ebca
+042effd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+042effec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+   6  Id: 2f0.184 Suspend: 0 Teb: 7ffd9000 Unfrozen
+ChildEBP RetAddr  
+043efeb8 77235e6c ntdll!KiFastSystemCallRet
+043efebc 754d179c ntdll!NtWaitForSingleObject+0xc
+043eff28 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+043eff40 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+043eff54 01e7ebca kernel32!WaitForSingleObject+0x12
+WARNING: Frame IP not in any known module. Following frames may be wrong.
+043eff94 7724b3f5 0x1e7ebca
+043effd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+043effec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+   7  Id: 2f0.a90 Suspend: 0 Teb: 7ffd8000 Unfrozen
+ChildEBP RetAddr  
+044efeb8 77235e6c ntdll!KiFastSystemCallRet
+044efebc 754d179c ntdll!NtWaitForSingleObject+0xc
+044eff28 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+044eff40 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+044eff54 01e7ebca kernel32!WaitForSingleObject+0x12
+WARNING: Frame IP not in any known module. Following frames may be wrong.
+044eff94 7724b3f5 0x1e7ebca
+044effd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+044effec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+   8  Id: 2f0.f60 Suspend: 0 Teb: 7ffd7000 Unfrozen
+ChildEBP RetAddr  
+045efdf0 77235e4c ntdll!KiFastSystemCallRet
+045efdf4 7721ef27 ntdll!NtWaitForMultipleObjects+0xc
+045eff88 77001174 ntdll!TppWaiterpThread+0x33d
+045eff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+045effd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+045effec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+   9  Id: 2f0.f38 Suspend: 0 Teb: 7ffd6000 Unfrozen
+ChildEBP RetAddr  
+057ffd9c 77235e4c ntdll!KiFastSystemCallRet
+057ffda0 754d6872 ntdll!NtWaitForMultipleObjects+0xc
+057ffe3c 76fff12a KERNELBASE!WaitForMultipleObjectsEx+0x100
+057ffe84 768d90be kernel32!WaitForMultipleObjectsExImplementation+0xe0
+057ffed8 740424b8 user32!RealMsgWaitForMultipleObjectsEx+0x13c
+057fff80 74042f76 MMDevAPI!CDeviceEnumerator::PnpNotificationThread+0x2a3
+057fff88 77001174 MMDevAPI!CDeviceEnumerator::PnpNotificationThreadWrapper+0xd
+057fff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+057fffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+057fffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+  10  Id: 2f0.964 Suspend: 0 Teb: 7ffd5000 Unfrozen
+ChildEBP RetAddr  
+0599fe24 77235e7c ntdll!KiFastSystemCallRet
+0599fe28 7722067b ntdll!NtWaitForWorkViaWorkerFactory+0xc
+0599ff88 77001174 ntdll!TppWorkerThread+0x216
+0599ff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+0599ffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+0599ffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+  11  Id: 2f0.f24 Suspend: 0 Teb: 7ffd4000 Unfrozen
+ChildEBP RetAddr  
+05a9fe24 77235e7c ntdll!KiFastSystemCallRet
+05a9fe28 7722067b ntdll!NtWaitForWorkViaWorkerFactory+0xc
+05a9ff88 77001174 ntdll!TppWorkerThread+0x216
+05a9ff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+05a9ffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+05a9ffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+  12  Id: 2f0.fe0 Suspend: 0 Teb: 7ffaf000 Unfrozen
+ChildEBP RetAddr  
+0716fe24 77235e7c ntdll!KiFastSystemCallRet
+0716fe28 7722067b ntdll!NtWaitForWorkViaWorkerFactory+0xc
+0716ff88 77001174 ntdll!TppWorkerThread+0x216
+0716ff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+0716ffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+0716ffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+  13  Id: 2f0.edc Suspend: 0 Teb: 7ffae000 Unfrozen
+ChildEBP RetAddr  
+0726fe24 77235e7c ntdll!KiFastSystemCallRet
+0726fe28 7722067b ntdll!NtWaitForWorkViaWorkerFactory+0xc
+0726ff88 77001174 ntdll!TppWorkerThread+0x216
+0726ff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+0726ffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+0726ffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+  14  Id: 2f0.ed8 Suspend: 0 Teb: 7ffad000 Unfrozen
+ChildEBP RetAddr  
+09d4fdb0 77235e6c ntdll!KiFastSystemCallRet
+09d4fdb4 754d179c ntdll!NtWaitForSingleObject+0xc
+09d4fe20 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+09d4fe38 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+09d4fe4c 09708ce6 kernel32!WaitForSingleObject+0x12
+WARNING: Stack unwind information not available. Following frames may be wrong.
+09d4ff84 097a3362 benchmark+0x178ce6
+00000000 00000000 benchmark!interface_3dmark_vista::benchmark_driver::init+0x91442
+
+  15  Id: 2f0.eac Suspend: 0 Teb: 7ffac000 Unfrozen
+ChildEBP RetAddr  
+09ecfed4 77234c1c ntdll!KiFastSystemCallRet
+09ecfed8 754d1876 ntdll!ZwDelayExecution+0xc
+09ecff40 754d1818 KERNELBASE!SleepEx+0x65
+09ecff50 770b5779 KERNELBASE!Sleep+0xf
+09ecff5c 770b6147 ole32!CROIDTable::WorkerThreadLoop+0x14
+09ecff78 770bc80b ole32!CRpcThread::WorkerLoop+0x26
+09ecff88 77001174 ole32!CRpcThreadCache::RpcWorkerThreadEntry+0x16
+09ecff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+09ecffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+09ecffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+# 16  Id: 2f0.31c Suspend: 0 Teb: 7ffab000 Unfrozen
+ChildEBP RetAddr  
+0eb1f754 77235e6c ntdll!KiFastSystemCallRet
+0eb1f758 754d179c ntdll!NtWaitForSingleObject+0xc
+0eb1f7c4 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+0eb1f7dc 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+0eb1f7f0 669fc651 kernel32!WaitForSingleObject+0x12
+0eb1f874 669fc753 lucidd3d10u!ExecuteProcess+0x151 [e:\home\build\trees\lucid2\branches\out\release\include\lucid\lucidtools\lucidexceptionhandler.hpp @ 156]
+0eb1f8e8 669fc7ae lucidd3d10u!SpawnDumperProcess+0xa3 [e:\home\build\trees\lucid2\branches\out\release\include\lucid\lucidtools\lucidexceptionhandler.hpp @ 186]
+0eb1f8f4 77012c2a lucidd3d10u!LucidUnhandledExceptionFilter+0xe [e:\home\build\trees\lucid2\branches\out\release\include\lucid\lucidtools\lucidexceptionhandler.hpp @ 201]
+0eb1f97c 77265a74 kernel32!UnhandledExceptionFilter+0x127
+0eb1f984 7720d950 ntdll!__RtlUserThreadStart+0x62
+0eb1f998 7720d7ec ntdll!_EH4_CallFilterFunc+0x12
+0eb1f9c0 772365f9 ntdll!_except_handler4+0x8e
+0eb1f9e4 772365cb ntdll!ExecuteHandler2+0x26
+0eb1fa94 77236457 ntdll!ExecuteHandler+0x24
+0eb1fa94 0e433d87 ntdll!KiUserExceptionDispatcher+0xf
+0eb1fde8 0e433ed8 sandbox_logic10!ResourceDescBehavior::GetBehavior+0x17 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\common\src\resourcedescbehavior.cpp @ 235]
+0eb1fe14 0e3ca4df sandbox_logic10!ResourceDescBehavior::ExhibitsBehavior+0x28 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\common\src\resourcedescbehavior.cpp @ 319]
+0eb1fe4c 0e3ca533 sandbox_logic10!Services_DDI10::IsOkayToCopy+0x6f [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\ddi10\src\services_ddi10.cpp @ 515]
+0eb1fe58 0e439ed2 sandbox_logic10!Services_DDI10::IsOkayToCopy+0x23 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\ddi10\src\services_ddi10.cpp @ 520]
+0eb1fe8c 0e4394a7 sandbox_logic10!TimeDivisionFlip::InsertTransferCommand+0x102 [e:\home\build\trees\lucid2\branches\product\mana_logics\sandboxlogic\framework\common\src\timedivisionflip.cpp @ 136]
+
+  17  Id: 2f0.9f8 Suspend: 0 Teb: 7ffaa000 Unfrozen
+ChildEBP RetAddr  
+0ec1fef0 77234c1c ntdll!KiFastSystemCallRet
+0ec1fef4 754d1876 ntdll!ZwDelayExecution+0xc
+0ec1ff5c 754d1818 KERNELBASE!SleepEx+0x65
+0ec1ff6c 66a754b0 KERNELBASE!Sleep+0xf
+0ec1ff80 66a68bff lucidd3d10u!lucid::manau::ThreadUtils::ProfilerThread::run+0x40 [e:\home\build\trees\lucid2\branches\product\mana\common\public\threadutils.hpp @ 120]
+0ec1ff88 77001174 lucidd3d10u!lucid::manau::Thread::ThreadProc+0xf [e:\home\build\trees\lucid2\branches\product\mana\common\src\thread.cpp @ 130]
+0ec1ff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+0ec1ffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+0ec1ffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+  18  Id: 2f0.de4 Suspend: 0 Teb: 7ffa9000 Unfrozen
+ChildEBP RetAddr  
+0f15fe78 77235e6c ntdll!KiFastSystemCallRet
+0f15fe7c 754d179c ntdll!NtWaitForSingleObject+0xc
+0f15fee8 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+0f15ff00 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+0f15ff14 66a60770 kernel32!WaitForSingleObject+0x12
+0f15ff38 66a609dd lucidd3d10u!lucid::manau::vista::DeviceThread::waitForCommand+0xa0 [e:\home\build\trees\lucid2\branches\product\mana\common\src\cmdprocessorgeneric.cpp @ 177]
+0f15ff80 66a68bff lucidd3d10u!lucid::manau::vista::DeviceThread::run+0xad [e:\home\build\trees\lucid2\branches\product\mana\common\src\cmdprocessorgeneric.cpp @ 296]
+0f15ff88 77001174 lucidd3d10u!lucid::manau::Thread::ThreadProc+0xf [e:\home\build\trees\lucid2\branches\product\mana\common\src\thread.cpp @ 130]
+0f15ff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+0f15ffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+0f15ffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+  19  Id: 2f0.a48 Suspend: 0 Teb: 7ffa8000 Unfrozen
+ChildEBP RetAddr  
+0f45fe78 77235e6c ntdll!KiFastSystemCallRet
+0f45fe7c 754d179c ntdll!NtWaitForSingleObject+0xc
+0f45fee8 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+0f45ff00 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+0f45ff14 66a60770 kernel32!WaitForSingleObject+0x12
+0f45ff38 66a609dd lucidd3d10u!lucid::manau::vista::DeviceThread::waitForCommand+0xa0 [e:\home\build\trees\lucid2\branches\product\mana\common\src\cmdprocessorgeneric.cpp @ 177]
+0f45ff80 66a68bff lucidd3d10u!lucid::manau::vista::DeviceThread::run+0xad [e:\home\build\trees\lucid2\branches\product\mana\common\src\cmdprocessorgeneric.cpp @ 296]
+0f45ff88 77001174 lucidd3d10u!lucid::manau::Thread::ThreadProc+0xf [e:\home\build\trees\lucid2\branches\product\mana\common\src\thread.cpp @ 130]
+0f45ff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+0f45ffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+0f45ffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+  20  Id: 2f0.a08 Suspend: 0 Teb: 7ffa7000 Unfrozen
+ChildEBP RetAddr  
+0fa5e8a4 77235e6c ntdll!KiFastSystemCallRet
+0fa5e8a8 754d179c ntdll!NtWaitForSingleObject+0xc
+0fa5e914 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+0fa5e92c 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+0fa5e940 669fe095 kernel32!WaitForSingleObject+0x12
+0fa5e9dc 66a5b260 lucidd3d10u!lucid::manau::vista::ddi10::Device10::onAfterEndOfFrame+0x245 [e:\home\build\trees\lucid2\branches\product\mana\ddi10\src\device10.cpp @ 629]
+0fa5ea30 72392f30 lucidd3d10u!lucid::manau::vista::ddi10::DxgiFuncs::Present_Light+0x180 [e:\home\build\trees\lucid2\branches\product\mana\ddi10\src\auto\dxgifuncs_auto.cpp @ 309]
+0fa5ea68 723bd61d dxgi!CD3D10Device::Present+0x10b
+0fa5eddc 723bd7cc dxgi!CDXGISwapChainBase<IDXGISwapChain>::PresentImpl+0x85e
+0fa5edec 095c7516 dxgi!CDXGISwapChainBase<IDXGISwapChain>::Present+0x13
+WARNING: Stack unwind information not available. Following frames may be wrong.
+0fa5ee28 095fcb7c benchmark+0x37516
+0fa5ee54 097c3cd9 benchmark+0x6cb7c
+0fa5ee58 00020124 benchmark!interface_3dmark_vista::benchmark_driver::init+0xb1db9
+0fa5ee5c 09b95eb2 0x20124
+0fa5ee60 00000000 0x9b95eb2
+
+  21  Id: 2f0.3b0 Suspend: 0 Teb: 7ffa6000 Unfrozen
+ChildEBP RetAddr  
+12e3fed4 77235e6c ntdll!KiFastSystemCallRet
+12e3fed8 754d179c ntdll!NtWaitForSingleObject+0xc
+12e3ff44 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+12e3ff5c 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+12e3ff70 723ada50 kernel32!WaitForSingleObject+0x12
+12e3ff88 77001174 dxgi!CDXGIMutexInSeparateThread::WorkerThread+0x17
+12e3ff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+12e3ffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+12e3ffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+  22  Id: 2f0.528 Suspend: 0 Teb: 7ffa5000 Unfrozen
+ChildEBP RetAddr  
+12f3fed4 77235e6c ntdll!KiFastSystemCallRet
+12f3fed8 754d179c ntdll!NtWaitForSingleObject+0xc
+12f3ff44 76fff003 KERNELBASE!WaitForSingleObjectEx+0x98
+12f3ff5c 76ffefb2 kernel32!WaitForSingleObjectExImplementation+0x75
+12f3ff70 723ada50 kernel32!WaitForSingleObject+0x12
+12f3ff88 77001174 dxgi!CDXGIMutexInSeparateThread::WorkerThread+0x17
+12f3ff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+12f3ffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+12f3ffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+  23  Id: 2f0.2b0 Suspend: 0 Teb: 7ffa4000 Unfrozen
+ChildEBP RetAddr  
+1303fe54 77234c1c ntdll!KiFastSystemCallRet
+1303fe58 754d1876 ntdll!ZwDelayExecution+0xc
+1303fec0 754d1818 KERNELBASE!SleepEx+0x65
+1303fed0 723b9763 KERNELBASE!Sleep+0xf
+1303ff88 77001174 dxgi!CDXGIFactory::GetListOfNotPresentingFullscreenSwapChains+0x132
+1303ff94 7724b3f5 kernel32!BaseThreadInitThunk+0xe
+1303ffd4 7724b3c8 ntdll!__RtlUserThreadStart+0x70
+1303ffec 00000000 ntdll!_RtlUserThreadStart+0x1b
+
+{m}/--\{m} Done
+{m}/--\{m} Displaying thread times
+!runaway
+ User Mode Time
+  Thread       Time
+   0:c70       0 days 0:00:02.854
+   6:184       0 days 0:00:00.343
+   5:948       0 days 0:00:00.296
+   4:460       0 days 0:00:00.218
+  16:31c       0 days 0:00:00.187
+  20:a08       0 days 0:00:00.046
+  19:a48       0 days 0:00:00.046
+  18:de4       0 days 0:00:00.046
+  23:2b0       0 days 0:00:00.000
+  22:528       0 days 0:00:00.000
+  21:3b0       0 days 0:00:00.000
+  17:9f8       0 days 0:00:00.000
+  15:eac       0 days 0:00:00.000
+  14:ed8       0 days 0:00:00.000
+  13:edc       0 days 0:00:00.000
+  12:fe0       0 days 0:00:00.000
+  11:f24       0 days 0:00:00.000
+  10:964       0 days 0:00:00.000
+   9:f38       0 days 0:00:00.000
+   8:f60       0 days 0:00:00.000
+   7:a90       0 days 0:00:00.000
+   3:a3c       0 days 0:00:00.000
+   2:9f4       0 days 0:00:00.000
+   1:9e4       0 days 0:00:00.000
+
+{m}/--\{m} Done
+
+Done.
