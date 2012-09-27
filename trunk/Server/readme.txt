@@ -1,0 +1,1 @@
+note: "MiniDumpReader.exe" is inside the "debuggers" directory
